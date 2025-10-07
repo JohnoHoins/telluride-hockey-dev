@@ -44,12 +44,13 @@ export default function Home() {
             Telluride Winter Hockey
           </h1>
           <h2 className="text-3xl md:text-5xl font-bold mb-8 text-blue-200">
-            Skills Camp 2024
+            Skills Camp
           </h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border border-white/20">
             <p className="text-2xl md:text-3xl font-semibold mb-4">December 20–21 & December 27–28</p>
-            <p className="text-xl md:text-2xl mb-6 text-blue-100">Hanley Rink, Telluride, CO</p>
-            <p className="text-2xl font-bold mb-8 text-yellow-300">$190 per player • Ages 6U–19U</p>
+            <p className="text-xl md:text-2xl mb-4 text-blue-100">Hanley Rink, Telluride, CO</p>
+            <p className="text-2xl font-bold mb-4 text-yellow-300">$190 per player (includes two 75-minute sessions)</p>
+            <p className="text-xl mb-8 text-blue-100">Ages: 6U–19U</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
@@ -74,10 +75,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About the Camp</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A fun and productive few days on the ice focused on improving all areas of individual skill. 
-              Players will work on skating, shooting, passing, stickhandling, and hockey IQ through 
-              high-tempo drills with current college players and experienced youth coaches.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              A fun and productive few days on the ice focused on improving all areas of individual skill.
+              Players will work on skating, shooting, passing, stickhandling, and hockey IQ through high-tempo drills.
+            </p>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mt-6 leading-relaxed">
+              Each player gets two 75-minute sessions led by current college players and experienced youth coaches.
             </p>
           </div>
           
@@ -110,22 +113,22 @@ export default function Home() {
       {/* Schedule Section */}
       <section id="schedule" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Camp Schedule</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Schedule</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 20–21</h3>
               <div className="space-y-4">
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">6U & 8U</h4>
-                  <p className="text-blue-100">Saturday 8:45am • Sunday 9:00am</p>
+                  <p className="text-blue-100">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">10U</h4>
-                  <p className="text-blue-100">Saturday 12:00pm • Sunday 10:30am</p>
+                  <p className="text-blue-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U</h4>
-                  <p className="text-blue-100">Saturday 1:30pm • Sunday 12:00pm</p>
+                  <p className="text-blue-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
             </div>
@@ -134,15 +137,15 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">12U</h4>
-                  <p className="text-green-100">Saturday 8:45am • Sunday 9:00am</p>
+                  <p className="text-green-100">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">14U</h4>
-                  <p className="text-green-100">Saturday 12:00pm • Sunday 10:30am</p>
+                  <p className="text-green-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U</h4>
-                  <p className="text-green-100">Saturday 1:30pm • Sunday 12:00pm</p>
+                  <p className="text-green-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
             </div>
@@ -185,7 +188,7 @@ export default function Home() {
                   <p className="text-gray-700 leading-relaxed text-lg">
                     Defenseman from Sherbrooke, QC. Born and raised in Sherbrooke, Quebec, Justin played throughout 
                     Quebec until 2020 before moving to Connecticut to play prep school hockey. Now at Manhattanville 
-                    University, he has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
+                    University and has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
                     and Euro Hockey / Eric Nates Hockey in the New York area.
                   </p>
                 </div>
@@ -195,27 +198,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Registration CTA Section */}
+      {/* Registration Section */}
       <section id="register" className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Register?</h2>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            $190 per player • Two 75-minute sessions • Limited spots available
-          </p>
-          <a
-            href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
-            target="_blank"
-            className="bg-white text-blue-600 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl inline-block"
-          >
-            Register & Pay Online
-          </a>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Registration</h2>
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+            <p className="text-2xl font-bold mb-4">Price: $190 per player</p>
+            <p className="text-xl mb-4">Includes: Two 75-minute sessions</p>
+            <p className="text-lg mb-8 text-blue-100">Limited Spots - Register Below</p>
+            <a
+              href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
+              target="_blank"
+              className="bg-white text-blue-600 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl inline-block"
+            >
+              Register & Pay Online
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Contact Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Contact</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -233,9 +238,9 @@ export default function Home() {
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">📱</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-400">Phone</h3>
+              <h3 className="text-2xl font-bold mb-4 text-blue-400">Call/Text</h3>
               <a 
-                href="tel:970-708-0643" 
+                href="tel:9707080643" 
                 className="text-xl text-blue-300 hover:text-blue-200 transition-colors"
               >
                 970-708-0643
