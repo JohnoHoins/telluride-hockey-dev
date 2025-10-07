@@ -93,8 +93,7 @@ export default function Home() {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </div>
             <a
-              href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
-              target="_blank"
+              href="#register"
               className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Register Now
@@ -118,14 +117,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-4 text-blue-100">Hanley Rink, Telluride, CO</p>
             <p className="text-2xl font-bold mb-4 text-yellow-300">$190 per player (includes two 75-minute sessions)</p>
             <p className="text-xl mb-8 text-blue-100">Ages: 6U–19U</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
-                target="_blank"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-xl font-bold text-xl transition-all transform hover:scale-105 shadow-2xl"
-              >
-                Register & Pay Online
-              </a>
+            <div className="flex justify-center">
               <a
                 href="#about"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-12 py-4 rounded-xl font-bold text-xl transition-all"
