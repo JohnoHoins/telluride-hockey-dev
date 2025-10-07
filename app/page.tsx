@@ -9,6 +9,7 @@ export default function Home() {
     phone: '',
     playerName: '',
     ageGroup: '',
+    bothWeekends: false,
     notes: ''
   });
   const [errors, setErrors] = useState<{[key: string]: string}>({});
@@ -16,10 +17,11 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
     // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
@@ -64,6 +66,7 @@ export default function Home() {
           phone: '',
           playerName: '',
           ageGroup: '',
+          bothWeekends: false,
           notes: ''
         });
       } else {
@@ -336,6 +339,26 @@ export default function Home() {
                     <p className="text-red-300 text-sm mt-1">{errors.ageGroup}</p>
                   )}
                 </div>
+
+                {formData.ageGroup === '19U/High School' && (
+                  <div>
+                    <label className="flex items-center space-x-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="bothWeekends"
+                        checked={formData.bothWeekends}
+                        onChange={handleChange}
+                        className="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                      />
+                      <span className="text-sm font-medium">
+                        Register for both weekends (December 20-21 & 27-28) - $380 total
+                      </span>
+                    </label>
+                    <p className="text-xs text-blue-200 mt-1">
+                      If unchecked, player will be registered for one weekend only ($190)
+                    </p>
+                  </div>
+                )}
 
                 <div>
                   <label htmlFor="notes" className="block text-sm font-medium mb-2">

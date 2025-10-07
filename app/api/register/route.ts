@@ -10,6 +10,7 @@ interface RegistrationData {
   phone?: string;
   playerName: string;
   ageGroup: string;
+  bothWeekends?: boolean;
   notes?: string;
 }
 
@@ -30,12 +31,13 @@ export async function POST(request: Request) {
         <li><strong>Parent/Guardian:</strong> ${formData.parentName}</li>
         <li><strong>Email:</strong> ${formData.email}</li>
         <li><strong>Phone:</strong> ${formData.phone || 'Not provided'}</li>
+        ${formData.bothWeekends ? '<li><strong>Registration:</strong> Both weekends (December 20-21 & 27-28)</li>' : ''}
         ${formData.notes ? `<li><strong>Notes:</strong> ${formData.notes}</li>` : ''}
       </ul>
       
       <h3>Payment Instructions:</h3>
       <p>Please complete your registration by sending payment via Venmo to @YOURHANDLE</p>
-      <p>Amount: $190 per player</p>
+      <p>Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
       
       <p>If you have any questions, please contact us:</p>
       <ul>
@@ -60,6 +62,8 @@ export async function POST(request: Request) {
         <li><strong>Parent/Guardian:</strong> ${formData.parentName}</li>
         <li><strong>Email:</strong> ${formData.email}</li>
         <li><strong>Phone:</strong> ${formData.phone || 'Not provided'}</li>
+        ${formData.bothWeekends ? '<li><strong>Registration:</strong> Both weekends (December 20-21 & 27-28)</li>' : ''}
+        <li><strong>Payment Amount:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</li>
         ${formData.notes ? `<li><strong>Notes:</strong> ${formData.notes}</li>` : ''}
       </ul>
       
