@@ -1,6 +1,81 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    parentName: '',
+    email: '',
+    phone: '',
+    playerName: '',
+    ageGroup: '',
+    notes: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.parentName.trim()) newErrors.parentName = 'Parent/Guardian name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Please enter a valid email';
+    if (!formData.playerName.trim()) newErrors.playerName = 'Player name is required';
+    if (!formData.ageGroup) newErrors.ageGroup = 'Age group is required';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          parentName: '',
+          email: '',
+          phone: '',
+          playerName: '',
+          ageGroup: '',
+          notes: ''
+        });
+      } else {
+        throw new Error('Registration failed');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('Registration failed. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen">
       {/* Navigation Header */}
@@ -95,7 +170,7 @@ export default function Home() {
                   <p className="text-blue-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
-                  <h4 className="font-bold text-lg mb-2">19U</h4>
+                  <h4 className="font-bold text-lg mb-2">19U / High School</h4>
                   <p className="text-blue-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
@@ -112,7 +187,7 @@ export default function Home() {
                   <p className="text-green-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
-                  <h4 className="font-bold text-lg mb-2">19U</h4>
+                  <h4 className="font-bold text-lg mb-2">19U / High School</h4>
                   <p className="text-green-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
@@ -154,19 +229,146 @@ export default function Home() {
 
       {/* Registration Section */}
       <section id="register" className="py-20 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Registration</h2>
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Registration</h2>
           <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-2xl mx-auto">
-            <p className="text-2xl font-bold mb-4">Price: $190 per player</p>
-            <p className="text-xl mb-4">Includes: Two 75-minute sessions</p>
-            <p className="text-lg mb-8 text-blue-100">Limited Spots - Register Below</p>
-            <a
-              href="https://buy.stripe.com/YOUR_PAYMENT_LINK"
-              target="_blank"
-              className="bg-white text-blue-600 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl inline-block"
-            >
-              Register & Pay Online
-            </a>
+            <p className="text-2xl font-bold mb-4 text-center">Price: $190 per player</p>
+            <p className="text-xl mb-8 text-center text-blue-100">Includes: Two 75-minute sessions</p>
+            
+            {isSubmitted ? (
+              <div className="text-center">
+                <div className="bg-green-500 text-white p-6 rounded-xl mb-6">
+                  <h3 className="text-2xl font-bold mb-2">Thanks for registering!</h3>
+                  <p className="text-lg">Payment instructions have been sent to your email.</p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="parentName" className="block text-sm font-medium mb-2">
+                    Parent/Guardian Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="parentName"
+                    name="parentName"
+                    value={formData.parentName}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-lg text-gray-900 ${
+                      errors.parentName ? 'border-2 border-red-500' : 'border border-gray-300'
+                    }`}
+                    placeholder="Enter parent/guardian name"
+                  />
+                  {errors.parentName && (
+                    <p className="text-red-300 text-sm mt-1">{errors.parentName}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-lg text-gray-900 ${
+                      errors.email ? 'border-2 border-red-500' : 'border border-gray-300'
+                    }`}
+                    placeholder="Enter email address"
+                  />
+                  {errors.email && (
+                    <p className="text-red-300 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg text-gray-900 border border-gray-300"
+                    placeholder="Enter phone number"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="playerName" className="block text-sm font-medium mb-2">
+                    Player Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="playerName"
+                    name="playerName"
+                    value={formData.playerName}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-lg text-gray-900 ${
+                      errors.playerName ? 'border-2 border-red-500' : 'border border-gray-300'
+                    }`}
+                    placeholder="Enter player name"
+                  />
+                  {errors.playerName && (
+                    <p className="text-red-300 text-sm mt-1">{errors.playerName}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="ageGroup" className="block text-sm font-medium mb-2">
+                    Age Group *
+                  </label>
+                  <select
+                    id="ageGroup"
+                    name="ageGroup"
+                    value={formData.ageGroup}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-lg text-gray-900 ${
+                      errors.ageGroup ? 'border-2 border-red-500' : 'border border-gray-300'
+                    }`}
+                  >
+                    <option value="">Select age group</option>
+                    <option value="6U">6U</option>
+                    <option value="8U">8U</option>
+                    <option value="10U">10U</option>
+                    <option value="12U">12U</option>
+                    <option value="14U">14U</option>
+                    <option value="19U/High School">19U/High School</option>
+                  </select>
+                  {errors.ageGroup && (
+                    <p className="text-red-300 text-sm mt-1">{errors.ageGroup}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="notes" className="block text-sm font-medium mb-2">
+                    Any Notes (Optional)
+                  </label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    value={formData.notes}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-lg text-gray-900 border border-gray-300"
+                    placeholder="Any additional information or special requests"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Registering...' : 'Register for Camp'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
