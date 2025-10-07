@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900 font-sans">
