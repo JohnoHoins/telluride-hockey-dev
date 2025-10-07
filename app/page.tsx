@@ -8,7 +8,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-900">🏒 Telluride Hockey</h1>
+              <h1 className="text-2xl font-bold text-blue-900">Telluride Hockey</h1>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
@@ -75,30 +75,6 @@ export default function Home() {
               Each player gets two 75-minute sessions led by current college players and experienced youth coaches.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">⛸️</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Skill Development</h3>
-              <p className="text-gray-600">High-tempo drills focused on skating, shooting, passing, and stickhandling</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🧠</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Hockey IQ</h3>
-              <p className="text-gray-600">Decision-making and game sense development through situational drills</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">👥</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Small Groups</h3>
-              <p className="text-gray-600">More individual attention and feedback for maximum improvement</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -151,39 +127,25 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Meet Your Coaches</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-              <div className="flex flex-col md:flex-row gap-6">
-                <img
-                  src="/coach-johno.jpg"
-                  alt="Johno Hoins - NCAA Hockey Player and Coach"
-                  className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0 shadow-lg"
-                />
-                <div>
-                  <h3 className="text-3xl font-bold mb-4 text-blue-900">Johno Hoins</h3>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    Center born in Telluride, Johno grew up on the ice before moving east to play prep school hockey 
-                    and later juniors in Canada and Pennsylvania. He now plays NCAA hockey at Manhattanville University 
-                    and serves as an assistant coach for the U16 team in Mamaroneck, NY. Coaches and trains with players 
-                    at Paul Vincent Hockey in MA—a camp known for developing NHL and college talent.
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-3xl font-bold mb-4 text-blue-900">Johno Hoins</h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  Center born in Telluride, Johno grew up on the ice before moving east to play prep school hockey 
+                  and later juniors in Canada and Pennsylvania. He now plays NCAA hockey at Manhattanville University 
+                  and serves as an assistant coach for the U16 team in Mamaroneck, NY. Coaches and trains with players 
+                  at Paul Vincent Hockey in MA—a camp known for developing NHL and college talent.
+                </p>
               </div>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-              <div className="flex flex-col md:flex-row gap-6">
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
-                  alt="Justin Fernet - NCAA Hockey Player and Coach"
-                  className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0 shadow-lg"
-                />
-                <div>
-                  <h3 className="text-3xl font-bold mb-4 text-blue-900">Justin Fernet</h3>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    Defenseman from Sherbrooke, QC. Born and raised in Sherbrooke, Quebec, Justin played throughout 
-                    Quebec until 2020 before moving to Connecticut to play prep school hockey. Now at Manhattanville 
-                    University and has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
-                    and Euro Hockey / Eric Nates Hockey in the New York area.
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-3xl font-bold mb-4 text-blue-900">Justin Fernet</h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  Defenseman from Sherbrooke, QC. Born and raised in Sherbrooke, Quebec, Justin played throughout 
+                  Quebec until 2020 before moving to Connecticut to play prep school hockey. Now at Manhattanville 
+                  University and has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
+                  and Euro Hockey / Eric Nates Hockey in the New York area.
+                </p>
               </div>
             </div>
           </div>
