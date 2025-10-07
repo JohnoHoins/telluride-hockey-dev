@@ -1,8 +1,10 @@
+import React from 'react';
+
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Navigation Header */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="fixed top-0 w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -26,27 +28,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Mountain Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1551524164-6cf2ac531c64?auto=format&fit=crop&w=1920&q=80')"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
-        </div>
-        
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             Telluride Winter Hockey
           </h1>
           <h2 className="text-3xl md:text-5xl font-bold mb-8 text-blue-200">
             Skills Camp
           </h2>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border border-white/20">
+          <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-4xl mx-auto">
             <p className="text-2xl md:text-3xl font-semibold mb-4">December 20–21 & December 27–28</p>
             <p className="text-xl md:text-2xl mb-4 text-blue-100">Hanley Rink, Telluride, CO</p>
             <p className="text-2xl font-bold mb-4 text-yellow-300">$190 per player (includes two 75-minute sessions)</p>
@@ -71,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About the Camp</h2>
@@ -115,35 +107,35 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Schedule</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-2xl text-white shadow-xl">
+            <div className="bg-blue-500 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 20–21</h3>
               <div className="space-y-4">
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">6U & 8U</h4>
                   <p className="text-blue-100">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">10U</h4>
                   <p className="text-blue-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U</h4>
                   <p className="text-blue-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-green-500 to-green-700 p-8 rounded-2xl text-white shadow-xl">
+            <div className="bg-green-500 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 27–28</h3>
               <div className="space-y-4">
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">12U</h4>
                   <p className="text-green-100">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">14U</h4>
                   <p className="text-green-100">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U</h4>
                   <p className="text-green-100">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
@@ -154,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Coaches Section */}
-      <section id="coaches" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+      <section id="coaches" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Meet Your Coaches</h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -199,10 +191,10 @@ export default function Home() {
       </section>
 
       {/* Registration Section */}
-      <section id="register" className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white">
+      <section id="register" className="py-20 bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Registration</h2>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-2xl mx-auto">
             <p className="text-2xl font-bold mb-4">Price: $190 per player</p>
             <p className="text-xl mb-4">Includes: Two 75-minute sessions</p>
             <p className="text-lg mb-8 text-blue-100">Limited Spots - Register Below</p>
