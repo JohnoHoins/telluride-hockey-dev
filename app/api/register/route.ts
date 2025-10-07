@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Only initialize Resend if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 interface RegistrationData {
   parentName: string;
@@ -65,23 +66,28 @@ export async function POST(request: Request) {
       <p>Please follow up with payment confirmation.</p>
     `;
 
-    // Send emails using Resend
-    if (process.env.RESEND_API_KEY) {
-      // Send confirmation email to parent
-      await resend.emails.send({
-        from: 'noreply@telluridehockey.com',
-        to: formData.email,
-        subject: 'Telluride Hockey Skills Camp - Registration Confirmation',
-        html: parentEmailContent,
-      });
+    // Send emails using Resend if available
+    if (resend && process.env.RESEND_API_KEY) {
+      try {
+        // Send confirmation email to parent
+        await resend.emails.send({
+          from: 'noreply@telluridehockey.com',
+          to: formData.email,
+          subject: 'Telluride Hockey Skills Camp - Registration Confirmation',
+          html: parentEmailContent,
+        });
 
-      // Send notification email to admin
-      await resend.emails.send({
-        from: 'noreply@telluridehockey.com',
-        to: 'johnohoins@gmail.com',
-        subject: 'New Registration - Telluride Hockey Skills Camp',
-        html: adminEmailContent,
-      });
+        // Send notification email to admin
+        await resend.emails.send({
+          from: 'noreply@telluridehockey.com',
+          to: 'johnohoins@gmail.com',
+          subject: 'New Registration - Telluride Hockey Skills Camp',
+          html: adminEmailContent,
+        });
+      } catch (emailError) {
+        console.error('Email sending failed:', emailError);
+        // Continue with registration even if email fails
+      }
     } else {
       // Fallback: just log the registration
       console.log('New registration (no email service configured):', formData);
