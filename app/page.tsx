@@ -153,7 +153,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
               <div className="flex flex-col md:flex-row gap-6">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                  src="/coach-johno.jpg"
                   alt="Johno Hoins - NCAA Hockey Player and Coach"
                   className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0 shadow-lg"
                 />
