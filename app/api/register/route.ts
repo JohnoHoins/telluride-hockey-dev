@@ -53,31 +53,35 @@ export async function POST(request: Request) {
         </div>
         
         <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 25px; border-radius: 10px; margin-bottom: 25px;">
-          <h3 style="color: #92400e; margin-top: 0;">💰 Payment Instructions:</h3>
-          <p style="font-size: 18px; margin: 15px 0;"><strong>Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</strong></p>
+          <h3 style="color: #92400e; margin-top: 0; font-size: 20px;">💰 Payment Instructions</h3>
+          <div style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
+            <p style="font-size: 24px; margin: 0; font-weight: bold; color: #1e40af;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+          </div>
           
-          <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
-            <div style="flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 8px; border: 2px solid #3b82f6;">
-              <h4 style="margin: 0 0 10px 0; color: #1e40af;">💳 Venmo Payment</h4>
-              <p style="margin: 10px 0;">Send payment via Venmo to:</p>
-              <div style="background: #f1f5f9; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;">
-                <strong style="font-size: 16px; color: #1e40af;">@johno-hoins</strong>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 25px 0;">
+            <div style="flex: 1; min-width: 280px; background: white; padding: 25px; border-radius: 10px; border: 2px solid #3b82f6; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h4 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px;">💳 Venmo Payment</h4>
+              <p style="margin: 10px 0 15px 0; font-size: 16px;">Send payment via Venmo to:</p>
+              <div style="background: #f8fafc; padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; border: 2px solid #3b82f6;">
+                <strong style="font-size: 20px; color: #1e40af;">@johno-hoins</strong>
               </div>
-              <p style="font-size: 12px; color: #6b7280; margin: 5px 0;">Include player name in the Venmo note</p>
+              <div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 4px solid #dc2626; margin: 15px 0;">
+                <p style="margin: 0; font-size: 14px; color: #dc2626; font-weight: bold;">⚠️ IMPORTANT: Include "${formData.playerName}" in the Venmo note so we know who registered!</p>
+              </div>
             </div>
             
-            <div style="flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 8px; border: 2px solid #10b981;">
-              <h4 style="margin: 0 0 10px 0; color: #047857;">💵 Cash Payment</h4>
-              <p style="margin: 10px 0;">Pay with cash at the camp:</p>
-              <div style="background: #ecfdf5; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;">
-                <strong style="font-size: 16px; color: #047857;">Bring exact amount</strong>
+            <div style="flex: 1; min-width: 280px; background: white; padding: 25px; border-radius: 10px; border: 2px solid #10b981; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h4 style="margin: 0 0 15px 0; color: #047857; font-size: 18px;">💵 Cash Payment</h4>
+              <p style="margin: 10px 0 15px 0; font-size: 16px;">Pay with cash at the camp:</p>
+              <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; border: 2px solid #10b981;">
+                <strong style="font-size: 18px; color: #047857;">Bring exact amount</strong>
               </div>
-              <p style="font-size: 12px; color: #6b7280; margin: 5px 0;">Payment due at first session</p>
+              <p style="font-size: 14px; color: #6b7280; margin: 10px 0; text-align: center;">Payment due at first session</p>
             </div>
           </div>
           
-          <div style="background: #e0f2fe; padding: 15px; border-radius: 8px; margin-top: 15px;">
-            <p style="margin: 0; font-size: 14px; color: #0c4a6e;"><strong>Note:</strong> You can choose either payment method. If paying by Venmo, please send payment before the camp starts. If paying by cash, bring the exact amount to your first session.</p>
+          <div style="background: #e0f2fe; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #0ea5e9;">
+            <p style="margin: 0; font-size: 15px; color: #0c4a6e; line-height: 1.5;"><strong>Payment Options:</strong> You can choose either payment method. If paying by Venmo, please send payment before the camp starts and include the player's name in the note. If paying by cash, bring the exact amount to your first session.</p>
           </div>
         </div>
         
@@ -113,47 +117,13 @@ export async function POST(request: Request) {
       </html>
     `;
 
-    // Create admin email content
-    const adminEmailContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <title>New Registration - Telluride Hockey Skills Camp</title>
-      </head>
-      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: #dc2626; color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 25px;">
-          <h1 style="margin: 0;">🏒 New Registration Received</h1>
-          <h2 style="margin: 10px 0 0 0; font-weight: normal;">Telluride Hockey Skills Camp</h2>
-        </div>
-        
-        <div style="background: white; border: 2px solid #e5e7eb; padding: 25px; border-radius: 10px;">
-          <h3 style="color: #dc2626; margin-top: 0;">Registration Details:</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Player:</strong> ${formData.playerName}</li>
-            <li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Age Group:</strong> ${formData.ageGroup}</li>
-            <li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Parent/Guardian:</strong> ${formData.parentName}</li>
-            <li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Email:</strong> ${formData.email}</li>
-            <li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Phone:</strong> ${formData.phone || 'Not provided'}</li>
-            ${formData.bothWeekends ? '<li style="margin: 10px 0; padding: 10px; background: #dcfce7; border-radius: 5px; color: #166534;"><strong>Registration:</strong> Both weekends (December 20-21 & 27-28)</li>' : ''}
-            <li style="margin: 10px 0; padding: 10px; background: #fef3c7; border-radius: 5px; color: #92400e;"><strong>Payment Amount:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</li>
-            ${formData.notes ? `<li style="margin: 10px 0; padding: 10px; background: #fef2f2; border-radius: 5px;"><strong>Notes:</strong> ${formData.notes}</li>` : ''}
-          </ul>
-        </div>
-        
-        <div style="background: #f3f4f6; padding: 20px; border-radius: 10px; text-align: center; margin-top: 25px;">
-          <p style="margin: 0; font-weight: bold; color: #dc2626;">Please follow up with payment confirmation.</p>
-        </div>
-      </body>
-      </html>
-    `;
 
-    // Send emails using Resend if available
+    // Send email using Resend if available
     if (resend && process.env.RESEND_API_KEY) {
       try {
-        console.log('Attempting to send emails...');
+        console.log('Attempting to send confirmation email...');
         
-        // Send confirmation email to parent
+        // Send confirmation email to parent only
         console.log('Sending confirmation email to:', formData.email);
         const parentEmailResult = await resend.emails.send({
           from: 'onboarding@resend.dev',
@@ -162,18 +132,8 @@ export async function POST(request: Request) {
           html: parentEmailContent,
         });
         console.log('Parent email result:', parentEmailResult);
-
-        // Send notification email to admin
-        console.log('Sending admin notification email to: johnohoins@gmail.com');
-        const adminEmailResult = await resend.emails.send({
-          from: 'onboarding@resend.dev',
-          to: 'johnohoins@gmail.com',
-          subject: 'New Registration - Telluride Hockey Skills Camp',
-          html: adminEmailContent,
-        });
-        console.log('Admin email result:', adminEmailResult);
         
-        console.log('All emails sent successfully');
+        console.log('Confirmation email sent successfully');
       } catch (emailError) {
         console.error('Email sending failed:', emailError);
         console.error('Error details:', emailError);
