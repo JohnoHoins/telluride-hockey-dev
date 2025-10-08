@@ -20,44 +20,14 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // Create parent email content - COMPLETELY REBUILT FROM SCRATCH
+    // Test email with just QR code
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Telluride Hockey Skills Camp Registration</title>
-      </head>
-      <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color: #111827; background-color: #ffffff;">
-        <div style="max-width: 600px; margin: 0 auto; padding: 24px;">
-          
-          <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 600; color: #111827; text-align: center;">Telluride Hockey Development</h1>
-          <p style="margin: 0 0 40px 0; font-size: 16px; color: #6b7280; text-align: center;">Winter Hockey Skills Camp</p>
-          
-          <p style="margin: 0 0 40px 0; font-size: 16px; color: #111827;">Thank you for registering for the Telluride Hockey Skills Camp! We're excited to have ${formData.playerName} join us.</p>
-          
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Player: ${formData.playerName}</p>
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Age Group: ${formData.ageGroup}</p>
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Parent/Guardian: ${formData.parentName}</p>
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Email: ${formData.email}</p>
-          <p style="margin: 0 0 40px 0; font-size: 16px; color: #111827;">Phone: ${formData.phone || 'Not provided'}</p>
-          
-          <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #111827;">Payment Instructions</h2>
-          <p style="margin: 0 0 16px 0; font-size: 16px; color: #111827;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
-          
-          <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="180" height="180" style="display:block;margin:20px auto;border-radius:8px;" />
-          
-          <p style="margin: 0 0 20px 0; font-size: 14px; color: #6b7280; text-align: center;">Please include the player's name in the Venmo payment notes.</p>
-          
-          <p style="margin: 0 0 40px 0; font-size: 16px; color: #111827;">You may also bring the exact amount in cash to your first session.</p>
-          
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">December 21–22: Sat 9–10:50 am • Sun 9–10:50 am</p>
-          <p style="margin: 0 0 40px 0; font-size: 16px; color: #111827;">December 27–28: Sat 9–10:50 am • Sun 9–10:50 am</p>
-          
-          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Contact: johnohoins@gmail.com • 970-708-0643</p>
-          <p style="margin: 0; font-size: 16px; color: #111827;">We look forward to seeing you at the rink!</p>
-          
-        </div>
+      <body>
+        <h1>Test QR Code</h1>
+        <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="200" height="200" />
+        <p>If you can see the QR code above, it's working!</p>
       </body>
       </html>
     `;
