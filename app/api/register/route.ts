@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // Create parent email content exactly as specified
+    // Create parent email content with exact specified layout
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
@@ -49,8 +49,6 @@ export async function POST(request: Request) {
           <!-- Payment Instructions -->
           <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #111827;">Payment Instructions</h2>
           <p style="margin: 0 0 16px 0; font-size: 16px; color: #111827;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
-          
-          <p style="margin: 0 0 20px 0; font-size: 16px; color: #111827;">Please scan the QR code below to submit payment by Venmo.</p>
           
           <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="180" height="180" style="display:block;margin:20px auto;border-radius:8px;" />
           
