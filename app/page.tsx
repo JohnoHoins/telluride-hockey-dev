@@ -124,8 +124,8 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
             {/* Left Side - Title */}
             <div className="text-center lg:text-left">
-              <h1 className="text-7xl md:text-9xl font-black mb-6 tracking-tight text-red-500 drop-shadow-2xl">
-                TELLURIDE
+              <h1 className="text-7xl md:text-9xl font-black mb-6 tracking-tight text-white drop-shadow-2xl">
+                Telluride
               </h1>
               <h2 className="text-5xl md:text-7xl font-bold mb-8 text-blue-200 drop-shadow-xl">
                 Winter Hockey
