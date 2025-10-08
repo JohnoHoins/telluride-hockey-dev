@@ -110,19 +110,21 @@ export default function Home() {
         <div className="absolute inset-0 bg-black opacity-30"></div>
         
         {/* Hockey Sticks Background */}
-        <div className="absolute inset-0 opacity-15">
-          <div className="absolute top-20 left-10 transform rotate-12">
-            <svg width="200" height="400" viewBox="0 0 200 400" className="text-white">
-              <path d="M20 20 L20 380 L180 380 L180 20 L20 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
-              <path d="M20 20 L20 40 L180 40 L180 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
-              <path d="M20 360 L20 380 L180 380 L180 360" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-16 left-8 transform rotate-15">
+            <svg width="300" height="500" viewBox="0 0 300 500" className="text-white">
+              {/* Hockey Stick 1 */}
+              <path d="M50 50 L50 450 L60 450 L60 50 L50 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
+              <path d="M50 50 L200 50 L200 60 L60 60 L60 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
+              <path d="M190 50 L190 200 L200 200 L200 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
             </svg>
           </div>
-          <div className="absolute top-32 right-16 transform -rotate-12">
-            <svg width="200" height="400" viewBox="0 0 200 400" className="text-white">
-              <path d="M20 20 L20 380 L180 380 L180 20 L20 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
-              <path d="M20 20 L20 40 L180 40 L180 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
-              <path d="M20 360 L20 380 L180 380 L180 360" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+          <div className="absolute top-24 right-12 transform -rotate-15">
+            <svg width="300" height="500" viewBox="0 0 300 500" className="text-white">
+              {/* Hockey Stick 2 */}
+              <path d="M250 50 L250 450 L260 450 L260 50 L250 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
+              <path d="M250 50 L100 50 L100 60 L260 60 L260 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
+              <path d="M110 50 L110 200 L100 200 L100 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
             </svg>
           </div>
         </div>
