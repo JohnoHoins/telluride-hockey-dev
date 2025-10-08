@@ -120,41 +120,53 @@ export default function Home() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <div className="mb-12">
-            <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tight text-white drop-shadow-lg">
-              Telluride Winter Hockey
-            </h1>
-            <h2 className="text-4xl md:text-6xl font-bold text-blue-200 drop-shadow-lg">
-              Skills Camp
-            </h2>
-          </div>
-          
-          <div className="bg-white bg-opacity-15 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl">
-            <div className="space-y-6">
-              <div>
-                <p className="text-2xl md:text-3xl font-bold text-white mb-2">December 20–21 & December 27–28</p>
-                <p className="text-xl text-blue-100">Hanley Rink, Telluride, CO</p>
-              </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            {/* Left Side - Title */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-7xl md:text-9xl font-black mb-6 tracking-tight text-white drop-shadow-2xl">
+                Telluride
+              </h1>
+              <h2 className="text-5xl md:text-7xl font-bold mb-8 text-blue-200 drop-shadow-xl">
+                Winter Hockey
+              </h2>
+              <h3 className="text-3xl md:text-5xl font-bold mb-12 text-yellow-300 drop-shadow-lg">
+                Skills Camp
+              </h3>
               
-              <div className="bg-yellow-400 bg-opacity-20 rounded-2xl p-6 border border-yellow-300">
-                <p className="text-2xl md:text-3xl font-bold text-yellow-200 mb-2">$190 per player</p>
-                <p className="text-lg text-yellow-100">Ages: 6U–19U</p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#register"
-                  className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-100 transition-all shadow-lg"
+                  className="bg-white text-blue-900 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-100 transition-all shadow-2xl hover:shadow-3xl transform hover:scale-105"
                 >
                   Register Now
                 </a>
                 <a
                   href="#about"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl font-bold text-lg transition-all"
+                  className="border-3 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-2xl font-bold text-xl transition-all shadow-xl"
                 >
                   Learn More
                 </a>
+              </div>
+            </div>
+            
+            {/* Right Side - Info Card */}
+            <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white border-opacity-30">
+              <div className="text-center space-y-6">
+                <div className="bg-yellow-400 bg-opacity-30 rounded-2xl p-6 border-2 border-yellow-300">
+                  <p className="text-3xl md:text-4xl font-bold text-yellow-200 mb-2">$190</p>
+                  <p className="text-xl text-yellow-100">per player</p>
+                </div>
+                
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-2">December 20–21</p>
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-4">& December 27–28</p>
+                  <p className="text-xl text-blue-100">Hanley Rink, Telluride, CO</p>
+                </div>
+                
+                <div className="bg-blue-500 bg-opacity-30 rounded-2xl p-4 border border-blue-400">
+                  <p className="text-lg text-blue-100">Ages: 6U–19U</p>
+                </div>
               </div>
             </div>
           </div>
