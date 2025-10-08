@@ -45,12 +45,19 @@ export async function POST(request: Request) {
           <p><strong>Amount:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
           
           <div style="margin: 20px 0;">
-            <img src="https://telluride-hockey-dev.vercel.app/venmo-qr.jpg" alt="Venmo QR Code" style="max-width: 200px; height: auto; border-radius: 8px;" />
-            <p style="font-size: 14px; color: #666; margin-top: 10px;">Scan with Venmo app to pay</p>
+            <a href="https://venmo.com/code?user_id=@johno-hoins&amount=${formData.bothWeekends ? '380' : '190'}&note=${encodeURIComponent(formData.playerName + ' - Telluride Hockey Camp')}" 
+               style="display: inline-block; background: #3d95ce; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; margin: 10px 0;">
+              💳 Pay with Venmo
+            </a>
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">Tap to open Venmo app and pay instantly</p>
           </div>
           
-          <p><strong>Venmo:</strong> @johno-hoins</p>
-          <p style="font-size: 14px; color: #666;">Please include the player's name in the payment notes</p>
+          <p style="font-size: 14px; color: #666; margin-top: 15px;">
+            <strong>Or send manually:</strong><br>
+            Venmo: @johno-hoins<br>
+            Amount: $${formData.bothWeekends ? '380' : '190'}<br>
+            Note: ${formData.playerName} - Telluride Hockey Camp
+          </p>
         </div>
         
         <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0;">
