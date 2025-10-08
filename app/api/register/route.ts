@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // Create parent email content with elite, production-ready design
+    // Create parent email content with clean, minimal design
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
@@ -29,69 +29,49 @@ export async function POST(request: Request) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Telluride Hockey Skills Camp Registration</title>
       </head>
-      <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111827; background-color: #ffffff;">
-        <table role="presentation" style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-collapse: collapse;">
-          <!-- Header -->
-          <tr>
-            <td style="padding: 40px 30px 20px 30px; text-align: center;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: 600; color: #111827;">Telluride Hockey Development</h1>
-              <p style="margin: 8px 0 0 0; font-size: 16px; color: #6b7280;">Winter Hockey Skills Camp</p>
-            </td>
-          </tr>
+      <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #111827; background-color: #ffffff;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 24px; background-color: #ffffff;">
           
-          <!-- Main Content -->
-          <tr>
-            <td style="padding: 0 30px 40px 30px;">
-              <!-- Thank You -->
-              <div style="margin-bottom: 40px;">
-                <h2 style="margin: 0 0 16px 0; font-size: 22px; font-weight: 600; color: #111827;">Thank you for registering!</h2>
-                <p style="margin: 0; font-size: 16px; color: #6b7280; line-height: 1.6;">We're excited to have <strong>${formData.playerName}</strong> join us for the Telluride Hockey Skills Camp.</p>
-              </div>
-              
-              <!-- Registration Details -->
-              <div style="margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #111827;">Registration Details</h3>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Player:</strong> ${formData.playerName}</p>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Age Group:</strong> ${formData.ageGroup}</p>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Parent/Guardian:</strong> ${formData.parentName}</p>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Email:</strong> ${formData.email}</p>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
-                ${formData.bothWeekends ? '<p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Registration:</strong> Both weekends (December 20-21 & 27-28)</p>' : ''}
-                ${formData.notes ? `<p style="margin: 8px 0; font-size: 16px; color: #111827;"><strong>Notes:</strong> ${formData.notes}</p>` : ''}
-              </div>
-              
-              <!-- Payment Instructions -->
-              <div style="margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #111827;">Payment instructions</h3>
-                <p style="margin: 0 0 20px 0; font-size: 16px; color: #111827;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
-                
-                <div style="text-align: center; margin: 20px 0;">
-                  <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR" style="width: 200px; height: 200px; display: block; margin: 16px auto; border-radius: 8px;">
-                </div>
-                
-                <p style="margin: 0 0 20px 0; font-size: 14px; color: #6b7280;">Please include the player's name in the Venmo payment notes.</p>
-                
-                <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Venmo: Use the QR code above</p>
-                <p style="margin: 0 0 20px 0; font-size: 16px; color: #111827;">Cash at first session: Bring exact amount</p>
-                
-                <p style="margin: 0; font-size: 14px; color: #6b7280;">If the QR doesn't load, reply to this email for payment help.</p>
-              </div>
-              
-              <!-- Camp Schedule -->
-              <div style="margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #111827;">Camp Schedule</h3>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;">December 20-21: Sat 8:45am • Sun 9:00am</p>
-                <p style="margin: 8px 0; font-size: 16px; color: #111827;">December 27-28: Sat 8:45am • Sun 9:00am</p>
-              </div>
-              
-              <!-- Contact Footer -->
-              <div style="border-top: 1px solid #e5e7eb; padding-top: 30px;">
-                <p style="margin: 0 0 16px 0; font-size: 16px; color: #111827;">Contact: johnohoins@gmail.com • 970-708-0643</p>
-                <p style="margin: 0; font-size: 16px; color: #6b7280;">We look forward to seeing you on the ice!</p>
-              </div>
-            </td>
-          </tr>
-        </table>
+          <!-- Header -->
+          <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 600; color: #111827; text-align: center;">Telluride Hockey Development</h1>
+          <p style="margin: 0 0 32px 0; font-size: 16px; color: #6b7280; text-align: center;">Winter Hockey Skills Camp</p>
+          
+          <!-- Intro Section -->
+          <p style="margin: 0 0 24px 0; font-size: 16px; color: #111827;">Thank you for registering for the Telluride Hockey Skills Camp!</p>
+          <p style="margin: 0 0 32px 0; font-size: 16px; color: #111827;">We're excited to have ${formData.playerName} join us.</p>
+          
+          <!-- Registration Details -->
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Player: ${formData.playerName}</p>
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Age Group: ${formData.ageGroup}</p>
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Parent/Guardian: ${formData.parentName}</p>
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Email: ${formData.email}</p>
+          <p style="margin: 0 0 32px 0; font-size: 16px; color: #111827;">Phone: ${formData.phone || 'Not provided'}</p>
+          
+          <!-- Payment Instructions -->
+          <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #111827;">Payment Instructions</h2>
+          <p style="margin: 0 0 24px 0; font-size: 16px; color: #111827;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+          
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Venmo Payment:</p>
+          <p style="margin: 0 0 16px 0; font-size: 16px; color: #111827;">Please scan the QR code below to submit payment.</p>
+          <p style="margin: 0 0 24px 0; font-size: 16px; color: #6b7280;">Please include the player's name in the Venmo payment notes.</p>
+          
+          <img src="https://telluridehockeydev.com/venmo-qr.png" alt="Venmo QR Code" width="180" height="180" style="display:block;margin:16px auto;border-radius:8px;" />
+          
+          <p style="margin: 24px 0 8px 0; font-size: 16px; color: #111827;">Cash Payment:</p>
+          <p style="margin: 0 0 32px 0; font-size: 16px; color: #111827;">You may bring the exact amount to your first session.</p>
+          
+          <!-- Camp Schedule -->
+          <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #111827;">Camp Schedule</h2>
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">December 21–22: Sat 9–10:50am, Sun 9–10:50am</p>
+          <p style="margin: 0 0 32px 0; font-size: 16px; color: #111827;">December 27–28: Sat 9–10:50am, Sun 9–10:50am</p>
+          
+          <!-- Footer -->
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Contact:</p>
+          <p style="margin: 0 0 8px 0; font-size: 16px; color: #111827;">Email: johnohoins@gmail.com</p>
+          <p style="margin: 0 0 16px 0; font-size: 16px; color: #111827;">Phone: 970-708-0643</p>
+          <p style="margin: 0; font-size: 16px; color: #111827;">We look forward to seeing you at the rink!</p>
+          
+        </div>
       </body>
       </html>
     `;
