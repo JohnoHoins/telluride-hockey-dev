@@ -217,7 +217,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-3xl font-bold mb-4 text-blue-900">Johno Hoins</h3>
                   <p className="text-gray-700 leading-relaxed text-lg">
-                    Telluride native who played prep school and junior hockey before moving to NCAA hockey at Manhattanville University. 
+                    Telluride native who played prep school and two years of juniors in Canada and PA before moving to NCAA hockey at Manhattanville University. 
                     Currently coaches youth hockey in Mamaroneck, NY and coaches and trains with PV Hockey, a skills program in MA.
                   </p>
                 </div>
