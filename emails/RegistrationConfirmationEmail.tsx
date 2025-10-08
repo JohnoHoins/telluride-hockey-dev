@@ -1,4 +1,4 @@
-import { Html, Head, Preview, Body, Container, Img } from "@react-email/components";
+import { Html, Head, Preview, Body, Container, Img } from "react-email";
 
 export default function RegistrationConfirmationEmail({ 
   playerName, 

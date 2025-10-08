@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { render } from '@react-email/render';
+import { render } from 'react-email';
 import RegistrationConfirmationEmail from '../../emails/RegistrationConfirmationEmail';
 
 // Only initialize Resend if API key is available
