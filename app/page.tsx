@@ -197,25 +197,39 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Meet Your Coaches</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-              <div>
-                <h3 className="text-3xl font-bold mb-4 text-blue-900">Johno Hoins</h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Center born in Telluride, Johno grew up on the ice before moving east to play prep school hockey 
-                  and later juniors in Canada and Pennsylvania. He now plays NCAA hockey at Manhattanville University 
-                  and serves as an assistant coach for the U16 team in Mamaroneck, NY. Coaches and trains with players 
-                  at Paul Vincent Hockey in MA—a camp known for developing high-level hockey talent.
-                </p>
+              <div className="flex items-start gap-6">
+                <img 
+                  src="/Hoins.jpg" 
+                  alt="Johno Hoins" 
+                  className="w-24 h-24 rounded-full object-cover shadow-lg"
+                />
+                <div>
+                  <h3 className="text-3xl font-bold mb-4 text-blue-900">Johno Hoins</h3>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    Center born in Telluride, Johno grew up on the ice before moving east to play prep school hockey 
+                    and later juniors in Canada and Pennsylvania. He now plays NCAA hockey at Manhattanville University 
+                    and serves as an assistant coach for the U16 team in Mamaroneck, NY. Coaches and trains with players 
+                    at Paul Vincent Hockey in MA—a camp known for developing high-level hockey talent.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-              <div>
-                <h3 className="text-3xl font-bold mb-4 text-blue-900">Justin Fernet</h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Defenseman from Sherbrooke, QC. Born and raised in Sherbrooke, Quebec, Justin played throughout 
-                  Quebec until 2020 before moving to Connecticut to play prep school hockey. Now at Manhattanville 
-                  University and has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
-                  and Euro Hockey / Eric Nates Hockey in the New York area.
-                </p>
+              <div className="flex items-start gap-6">
+                <img 
+                  src="/Fernet.jpg" 
+                  alt="Justin Fernet" 
+                  className="w-24 h-24 rounded-full object-cover shadow-lg"
+                />
+                <div>
+                  <h3 className="text-3xl font-bold mb-4 text-blue-900">Justin Fernet</h3>
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    Defenseman from Sherbrooke, QC. Born and raised in Sherbrooke, Quebec, Justin played throughout 
+                    Quebec until 2020 before moving to Connecticut to play prep school hockey. Now at Manhattanville 
+                    University and has spent the past two and a half years coaching with Académie CCM in Sherbrooke 
+                    and Euro Hockey / Eric Nates Hockey in the New York area.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
