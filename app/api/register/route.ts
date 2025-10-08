@@ -20,28 +20,53 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // TEST: No images, just text to isolate the issue
+    // Clean, simple email with QR code
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
-      <body>
-        <h1>🚨 IMAGE TEST EMAIL 🚨</h1>
-        <p>This email has NO images to test if the issue is with images or email content.</p>
-        <p>If you see this message, the email system is working.</p>
-        <p>Next step: We'll add images back one by one to find the problem.</p>
-        <hr>
-        <p><strong>Registration Details:</strong></p>
-        <p>Player: ${formData.playerName}</p>
-        <p>Age Group: ${formData.ageGroup}</p>
-        <p>Parent: ${formData.parentName}</p>
-        <p>Email: ${formData.email}</p>
-        <p>Phone: ${formData.phone || 'Not provided'}</p>
-        <p>Both Weekends: ${formData.bothWeekends ? 'Yes' : 'No'}</p>
-        <p>Notes: ${formData.notes || 'None'}</p>
-        <hr>
-        <p><strong>Payment:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
-        <p><strong>Venmo:</strong> @johno-hoins</p>
-        <p><strong>Cash:</strong> You may also bring cash to your first session</p>
+      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h1 style="color: #2563eb; text-align: center; margin-bottom: 30px;">Telluride Hockey Development</h1>
+        
+        <p>Thank you for registering for the Telluride Hockey Skills Camp! We're excited to have ${formData.playerName} join us.</p>
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e40af;">Registration Details</h3>
+          <p><strong>Player:</strong> ${formData.playerName}</p>
+          <p><strong>Age Group:</strong> ${formData.ageGroup}</p>
+          <p><strong>Parent/Guardian:</strong> ${formData.parentName}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
+          ${formData.bothWeekends ? '<p><strong>Registration:</strong> Both weekends</p>' : ''}
+          ${formData.notes ? `<p><strong>Notes:</strong> ${formData.notes}</p>` : ''}
+        </div>
+        
+        <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+          <h3 style="margin-top: 0; color: #1e40af;">Payment Instructions</h3>
+          <p><strong>Amount:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+          
+          <div style="margin: 20px 0;">
+            <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" style="max-width: 200px; height: auto; border-radius: 8px;" />
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">Scan with Venmo app to pay</p>
+          </div>
+          
+          <p><strong>Venmo:</strong> @johno-hoins</p>
+          <p style="font-size: 14px; color: #666;">Please include the player's name in the payment notes</p>
+        </div>
+        
+        <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0;">
+          <p style="margin: 0; color: #166534;"><strong>Alternative:</strong> You may also bring the exact amount in cash to your first session</p>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+          <h3 style="color: #1e40af;">Camp Schedule</h3>
+          <p><strong>December 21–22:</strong> Saturday 9:00–10:50 AM • Sunday 9:00–10:50 AM</p>
+          <p><strong>December 27–28:</strong> Saturday 9:00–10:50 AM • Sunday 9:00–10:50 AM</p>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center; color: #666; font-size: 14px;">
+          <p>Contact: johnohoins@gmail.com • 970-708-0643</p>
+          <p>We look forward to seeing you at the rink!</p>
+        </div>
       </body>
       </html>
     `;
