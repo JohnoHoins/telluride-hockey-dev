@@ -67,17 +67,35 @@ export async function POST(request: Request) {
         <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px; text-align: center;">📅 Complete Camp Schedule</h3>
           <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
-            <div style="flex: 1; min-width: 200px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-              <h4 style="margin: 0 0 10px 0; color: #1e40af; font-size: 16px;">Weekend 1</h4>
-              <p style="margin: 0; color: #374151; font-weight: 500;">December 21–22</p>
-              <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 14px;">Saturday 9:00–10:50 AM</p>
-              <p style="margin: 0; color: #6b7280; font-size: 14px;">Sunday 9:00–10:50 AM</p>
+            <div style="flex: 1; min-width: 200px; background: #3b82f6; padding: 20px; border-radius: 12px; color: white;">
+              <h4 style="margin: 0 0 15px 0; color: white; font-size: 20px; font-weight: bold;">December 20–21</h4>
+              <div style="margin-bottom: 10px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">6U & 8U</h5>
+                <p style="margin: 0; color: #dbeafe; font-size: 14px;">Sat 8:45 am • Sun 9:00 am</p>
+              </div>
+              <div style="margin-bottom: 10px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">10U</h5>
+                <p style="margin: 0; color: #dbeafe; font-size: 14px;">Sat 12:00 pm • Sun 10:30 am</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">19U / High School</h5>
+                <p style="margin: 0; color: #dbeafe; font-size: 14px;">Sat 1:30 pm • Sun 12:00 pm</p>
+              </div>
             </div>
-            <div style="flex: 1; min-width: 200px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-              <h4 style="margin: 0 0 10px 0; color: #1e40af; font-size: 16px;">Weekend 2</h4>
-              <p style="margin: 0; color: #374151; font-weight: 500;">December 27–28</p>
-              <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 14px;">Saturday 9:00–10:50 AM</p>
-              <p style="margin: 0; color: #6b7280; font-size: 14px;">Sunday 9:00–10:50 AM</p>
+            <div style="flex: 1; min-width: 200px; background: #10b981; padding: 20px; border-radius: 12px; color: white;">
+              <h4 style="margin: 0 0 15px 0; color: white; font-size: 20px; font-weight: bold;">December 27–28</h4>
+              <div style="margin-bottom: 10px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">12U</h5>
+                <p style="margin: 0; color: #d1fae5; font-size: 14px;">Sat 8:45 am • Sun 9:00 am</p>
+              </div>
+              <div style="margin-bottom: 10px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">14U</h5>
+                <p style="margin: 0; color: #d1fae5; font-size: 14px;">Sat 12:00 pm • Sun 10:30 am</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px;">
+                <h5 style="margin: 0 0 5px 0; color: white; font-weight: bold; font-size: 16px;">19U / High School</h5>
+                <p style="margin: 0; color: #d1fae5; font-size: 14px;">Sat 1:30 pm • Sun 12:00 pm</p>
+              </div>
             </div>
           </div>
         </div>
