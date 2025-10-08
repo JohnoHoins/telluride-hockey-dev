@@ -52,7 +52,7 @@ export async function POST(request: Request) {
           
           <p style="margin: 0 0 20px 0; font-size: 16px; color: #111827;">Please scan the QR code below to submit payment by Venmo.</p>
           
-          <img src="https://telluridehockeydev.com/venmo-qr.png" alt="Venmo QR Code" width="180" height="180" style="display:block;margin:20px auto;border-radius:8px;" />
+          <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="180" height="180" style="display:block;margin:20px auto;border-radius:8px;" />
           
           <p style="margin: 0 0 20px 0; font-size: 14px; color: #6b7280; text-align: center;">Please include the player's name in the Venmo payment notes.</p>
           
