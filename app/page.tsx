@@ -106,28 +106,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/07468625-e448-4cc5-a21b-895eced25802.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
         
-        {/* Hockey Sticks Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-16 left-8 transform rotate-15">
-            <svg width="300" height="500" viewBox="0 0 300 500" className="text-white">
-              {/* Hockey Stick 1 */}
-              <path d="M50 50 L50 450 L60 450 L60 50 L50 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-              <path d="M50 50 L200 50 L200 60 L60 60 L60 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-              <path d="M190 50 L190 200 L200 200 L200 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-            </svg>
-          </div>
-          <div className="absolute top-24 right-12 transform -rotate-15">
-            <svg width="300" height="500" viewBox="0 0 300 500" className="text-white">
-              {/* Hockey Stick 2 */}
-              <path d="M250 50 L250 450 L260 450 L260 50 L250 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-              <path d="M250 50 L100 50 L100 60 L260 60 L260 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-              <path d="M110 50 L110 200 L100 200 L100 50" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round"/>
-            </svg>
-          </div>
-        </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
