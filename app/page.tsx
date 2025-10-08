@@ -234,7 +234,7 @@ export default function Home() {
                   <h3 className="text-3xl font-bold mb-4 text-blue-900">Justin Fernet</h3>
                   <p className="text-gray-700 leading-relaxed text-lg">
                     Quebec native who played prep school and juniors in Connecticut before joining Manhattanville University. 
-                    Has coached with Académie CCM in Sherbrooke and Euro Hockey in the New York area.
+                    Was drafted in the QMJHL by Halifax in 2019. Has coached with Académie CCM in Sherbrooke and Euro Hockey in the New York area.
                   </p>
                 </div>
               </div>
