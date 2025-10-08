@@ -80,7 +80,7 @@ export async function POST(request: Request) {
         // Send confirmation email to parent
         console.log('Sending confirmation email to:', formData.email);
         const parentEmailResult = await resend.emails.send({
-          from: 'noreply@telluridehockey.com',
+          from: 'onboarding@resend.dev',
           to: formData.email,
           subject: 'Telluride Hockey Skills Camp - Registration Confirmation',
           html: parentEmailContent,
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
         // Send notification email to admin
         console.log('Sending admin notification email to: johnohoins@gmail.com');
         const adminEmailResult = await resend.emails.send({
-          from: 'noreply@telluridehockey.com',
+          from: 'onboarding@resend.dev',
           to: 'johnohoins@gmail.com',
           subject: 'New Registration - Telluride Hockey Skills Camp',
           html: adminEmailContent,
