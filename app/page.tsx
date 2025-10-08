@@ -273,14 +273,20 @@ export default function Home() {
       </section>
 
       {/* Registration Section */}
-      <section id="register" className="py-20 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="register" className="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white relative overflow-hidden">
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-800 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Registration</h2>
-          <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl border border-white border-opacity-20">
             
             {isSubmitted ? (
               <div className="text-center">
-                <div className="bg-green-500 text-white p-6 rounded-xl mb-6">
+                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white p-6 rounded-xl mb-6 shadow-xl">
                   <h3 className="text-2xl font-bold mb-2">Thanks for registering!</h3>
                   <p className="text-lg">Payment instructions have been sent to your email.</p>
                 </div>
@@ -426,7 +432,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Registering...' : 'Register for Camp'}
                 </button>
@@ -442,25 +448,25 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Contact</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
                 <span className="text-3xl">📧</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-blue-400">Email</h3>
               <a 
                 href="mailto:johnohoins@gmail.com" 
-                className="text-xl text-blue-300 hover:text-blue-200 transition-colors"
+                className="text-xl text-blue-300 hover:text-yellow-300 transition-colors"
               >
                 johnohoins@gmail.com
               </a>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
                 <span className="text-3xl">📱</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-400">Call/Text</h3>
+              <h3 className="text-2xl font-bold mb-4 text-yellow-400">Call/Text</h3>
               <a 
                 href="tel:9707080643" 
-                className="text-xl text-blue-300 hover:text-blue-200 transition-colors"
+                className="text-xl text-yellow-300 hover:text-blue-300 transition-colors"
               >
                 970-708-0643
               </a>
