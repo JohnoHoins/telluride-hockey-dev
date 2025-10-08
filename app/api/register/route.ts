@@ -60,9 +60,8 @@ export async function POST(request: Request) {
           </p>
         </div>
         
-        <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
-          <h3 style="margin: 0 0 10px 0; color: #92400e; font-size: 18px;">💰 Cash Payment Option</h3>
-          <p style="margin: 0; color: #92400e; font-size: 16px; font-weight: 500;">You may also bring the exact amount in cash to your first session</p>
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+          <p style="margin: 0; color: #166534; font-size: 16px; font-weight: 500;"><strong>Alternative:</strong> You may also bring the exact amount in cash to your first session</p>
         </div>
         
         <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 12px; border-left: 4px solid #3b82f6;">

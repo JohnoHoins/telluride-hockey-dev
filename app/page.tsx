@@ -203,7 +203,7 @@ export default function Home() {
                   Center born in Telluride, Johno grew up on the ice before moving east to play prep school hockey 
                   and later juniors in Canada and Pennsylvania. He now plays NCAA hockey at Manhattanville University 
                   and serves as an assistant coach for the U16 team in Mamaroneck, NY. Coaches and trains with players 
-                  at Paul Vincent Hockey in MA—a camp known for developing NHL and college talent.
+                  at Paul Vincent Hockey in MA—a camp known for developing high-level hockey talent.
                 </p>
               </div>
             </div>
