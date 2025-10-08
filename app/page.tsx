@@ -139,10 +139,9 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About the Camp</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               A fun and productive few days on the ice focused on improving all areas of individual skill.
-              Players will work on skating, shooting, passing, stickhandling, and hockey IQ through high-tempo drills.
             </p>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mt-6 leading-relaxed">
-              Each player gets two 75-minute sessions led by current college players and experienced youth coaches.
+              Two 75-minute sessions led by current college players and coaches.
             </p>
           </div>
         </div>
