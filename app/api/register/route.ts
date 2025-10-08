@@ -61,7 +61,7 @@ export async function POST(request: Request) {
               <h4 style="margin: 0 0 10px 0; color: #1e40af;">💳 Venmo Payment</h4>
               <p style="margin: 10px 0;">Send payment via Venmo to:</p>
               <div style="background: #f1f5f9; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;">
-                <strong style="font-size: 16px; color: #1e40af;">@YOURHANDLE</strong>
+                <strong style="font-size: 16px; color: #1e40af;">@johno-hoins</strong>
               </div>
               <p style="font-size: 12px; color: #6b7280; margin: 5px 0;">Include player name in the Venmo note</p>
             </div>
