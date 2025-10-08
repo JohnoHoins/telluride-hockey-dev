@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         <h1>🚨 FORCE TEST EMAIL 🚨</h1>
         <p>This is a FORCE TEST to verify changes are working!</p>
         <p>If you see this message, the email system is updating correctly.</p>
-        <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="200" height="200" />
+        <img src="https://via.placeholder.com/200x200/0066cc/ffffff?text=QR+CODE" alt="Venmo QR Code" width="200" height="200" />
         <p>QR Code Test - If you can see the image above, it's working!</p>
       </body>
       </html>
