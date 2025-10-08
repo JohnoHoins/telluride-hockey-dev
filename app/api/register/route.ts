@@ -20,14 +20,16 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // Test email with just QR code
+    // FORCE TEST - THIS IS A COMPLETELY NEW EMAIL
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
       <body>
-        <h1>Test QR Code</h1>
+        <h1>🚨 FORCE TEST EMAIL 🚨</h1>
+        <p>This is a FORCE TEST to verify changes are working!</p>
+        <p>If you see this message, the email system is updating correctly.</p>
         <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" width="200" height="200" />
-        <p>If you can see the QR code above, it's working!</p>
+        <p>QR Code Test - If you can see the image above, it's working!</p>
       </body>
       </html>
     `;
