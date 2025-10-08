@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { google } from 'googleapis';
 
 // Only initialize Resend if API key is available
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
@@ -14,11 +15,65 @@ interface RegistrationData {
   notes?: string;
 }
 
+// Function to add registration to Google Sheets
+async function addToGoogleSheet(formData: RegistrationData) {
+  try {
+    if (!process.env.GOOGLE_SHEETS_PRIVATE_KEY || !process.env.GOOGLE_SHEETS_CLIENT_EMAIL || !process.env.GOOGLE_SHEET_ID) {
+      console.log('Google Sheets not configured, skipping...');
+      return;
+    }
+
+    // Parse the private key (it might have escaped newlines)
+    const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n');
+
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+        private_key: privateKey,
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    
+    const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/Denver' });
+    
+    const row = [
+      timestamp,
+      formData.parentName,
+      formData.email,
+      formData.phone || '',
+      formData.playerName,
+      formData.ageGroup,
+      formData.bothWeekends ? 'Both Weekends' : 'One Weekend',
+      formData.bothWeekends ? '$380' : '$190',
+      formData.notes || '',
+    ];
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range: 'Sheet1!A:I', // Adjust sheet name if needed
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values: [row],
+      },
+    });
+
+    console.log('Successfully added to Google Sheet');
+  } catch (error) {
+    console.error('Error adding to Google Sheet:', error);
+    // Don't fail the registration if Google Sheets fails
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const formData: RegistrationData = await request.json();
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
+    
+    // Add to Google Sheet
+    await addToGoogleSheet(formData);
     
     // Clean, simple email with QR code
     const parentEmailContent = `
