@@ -20,16 +20,28 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // FORCE TEST - THIS IS A COMPLETELY NEW EMAIL
+    // TEST: No images, just text to isolate the issue
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
       <body>
-        <h1>🚨 FORCE TEST EMAIL 🚨</h1>
-        <p>This is a FORCE TEST to verify changes are working!</p>
-        <p>If you see this message, the email system is updating correctly.</p>
-        <img src="https://via.placeholder.com/200x200/0066cc/ffffff?text=QR+CODE" alt="Venmo QR Code" width="200" height="200" />
-        <p>QR Code Test - If you can see the image above, it's working!</p>
+        <h1>🚨 IMAGE TEST EMAIL 🚨</h1>
+        <p>This email has NO images to test if the issue is with images or email content.</p>
+        <p>If you see this message, the email system is working.</p>
+        <p>Next step: We'll add images back one by one to find the problem.</p>
+        <hr>
+        <p><strong>Registration Details:</strong></p>
+        <p>Player: ${formData.playerName}</p>
+        <p>Age Group: ${formData.ageGroup}</p>
+        <p>Parent: ${formData.parentName}</p>
+        <p>Email: ${formData.email}</p>
+        <p>Phone: ${formData.phone || 'Not provided'}</p>
+        <p>Both Weekends: ${formData.bothWeekends ? 'Yes' : 'No'}</p>
+        <p>Notes: ${formData.notes || 'None'}</p>
+        <hr>
+        <p><strong>Payment:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+        <p><strong>Venmo:</strong> @johno-hoins</p>
+        <p><strong>Cash:</strong> You may also bring cash to your first session</p>
       </body>
       </html>
     `;
