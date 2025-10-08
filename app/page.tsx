@@ -130,7 +130,7 @@ export default function Home() {
               <h2 className="text-5xl md:text-7xl font-bold mb-8 text-blue-200 drop-shadow-xl">
                 Winter Hockey
               </h2>
-              <h3 className="text-3xl md:text-5xl font-bold mb-12 text-yellow-300 drop-shadow-lg">
+              <h3 className="text-3xl md:text-5xl font-bold mb-12 text-blue-100 drop-shadow-lg">
                 Skills Camp
               </h3>
               
@@ -153,9 +153,9 @@ export default function Home() {
             {/* Right Side - Info Card */}
             <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white border-opacity-30">
               <div className="text-center space-y-6">
-                <div className="bg-yellow-400 bg-opacity-30 rounded-2xl p-6 border-2 border-yellow-300">
-                  <p className="text-3xl md:text-4xl font-bold text-yellow-200 mb-2">$190</p>
-                  <p className="text-xl text-yellow-100">per player</p>
+                <div className="bg-blue-400 bg-opacity-30 rounded-2xl p-6 border-2 border-blue-300">
+                  <p className="text-3xl md:text-4xl font-bold text-white mb-2">$190</p>
+                  <p className="text-xl text-blue-50">per player</p>
                 </div>
                 
                 <div>
@@ -210,20 +210,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-8 rounded-2xl text-white shadow-xl">
+            <div className="bg-gradient-to-br from-blue-400 to-blue-500 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 27–28</h3>
               <div className="space-y-4">
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">12U</h4>
-                  <p className="text-yellow-50">Sat 8:45 am • Sun 9:00 am</p>
+                  <p className="text-blue-50">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">14U</h4>
-                  <p className="text-yellow-50">Sat 12:00 pm • Sun 10:30 am</p>
+                  <p className="text-blue-50">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U / High School</h4>
-                  <p className="text-yellow-50">Sat 1:30 pm • Sun 12:00 pm</p>
+                  <p className="text-blue-50">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function Home() {
       <section id="register" className="py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white relative overflow-hidden">
         {/* Subtle Pattern Overlay */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-800 rounded-full blur-3xl"></div>
         </div>
         
@@ -286,7 +286,7 @@ export default function Home() {
             
             {isSubmitted ? (
               <div className="text-center">
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white p-6 rounded-xl mb-6 shadow-xl">
+                <div className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-6 rounded-xl mb-6 shadow-xl">
                   <h3 className="text-2xl font-bold mb-2">Thanks for registering!</h3>
                   <p className="text-lg">Payment instructions have been sent to your email.</p>
                 </div>
@@ -432,7 +432,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Registering...' : 'Register for Camp'}
                 </button>
@@ -454,19 +454,19 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4 text-blue-400">Email</h3>
               <a 
                 href="mailto:johnohoins@gmail.com" 
-                className="text-xl text-blue-300 hover:text-yellow-300 transition-colors"
+                className="text-xl text-blue-300 hover:text-blue-200 transition-colors"
               >
                 johnohoins@gmail.com
               </a>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
                 <span className="text-3xl">📱</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-yellow-400">Call/Text</h3>
+              <h3 className="text-2xl font-bold mb-4 text-blue-400">Call/Text</h3>
               <a 
                 href="tel:9707080643" 
-                className="text-xl text-yellow-300 hover:text-blue-300 transition-colors"
+                className="text-xl text-blue-300 hover:text-blue-200 transition-colors"
               >
                 970-708-0643
               </a>
