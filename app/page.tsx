@@ -111,7 +111,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/07468625-e448-4cc5-a21b-895eced25802.png')`,
+            backgroundImage: `url('/hockey-mountains.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
