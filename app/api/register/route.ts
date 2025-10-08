@@ -17,6 +17,8 @@ interface RegistrationData {
 export async function POST(request: Request) {
   try {
     const formData: RegistrationData = await request.json();
+    console.log('Registration received:', formData);
+    console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
     // Send email to parent with payment instructions
     const parentEmailContent = `
@@ -73,28 +75,39 @@ export async function POST(request: Request) {
     // Send emails using Resend if available
     if (resend && process.env.RESEND_API_KEY) {
       try {
+        console.log('Attempting to send emails...');
+        
         // Send confirmation email to parent
-        await resend.emails.send({
+        console.log('Sending confirmation email to:', formData.email);
+        const parentEmailResult = await resend.emails.send({
           from: 'noreply@telluridehockey.com',
           to: formData.email,
           subject: 'Telluride Hockey Skills Camp - Registration Confirmation',
           html: parentEmailContent,
         });
+        console.log('Parent email result:', parentEmailResult);
 
         // Send notification email to admin
-        await resend.emails.send({
+        console.log('Sending admin notification email to: johnohoins@gmail.com');
+        const adminEmailResult = await resend.emails.send({
           from: 'noreply@telluridehockey.com',
           to: 'johnohoins@gmail.com',
           subject: 'New Registration - Telluride Hockey Skills Camp',
           html: adminEmailContent,
         });
+        console.log('Admin email result:', adminEmailResult);
+        
+        console.log('All emails sent successfully');
       } catch (emailError) {
         console.error('Email sending failed:', emailError);
+        console.error('Error details:', emailError);
         // Continue with registration even if email fails
       }
     } else {
       // Fallback: just log the registration
       console.log('New registration (no email service configured):', formData);
+      console.log('Resend instance:', !!resend);
+      console.log('API Key present:', !!process.env.RESEND_API_KEY);
     }
 
     return NextResponse.json({ success: true, message: 'Registration successful' });
