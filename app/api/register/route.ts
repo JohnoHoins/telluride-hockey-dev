@@ -64,6 +64,12 @@ export async function POST(request: Request) {
           <p style="margin: 0; color: #166534; font-size: 16px; font-weight: 500;"><strong>Alternative:</strong> You may also bring the exact amount in cash to your first session</p>
         </div>
         
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+          <h3 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px;">📅 Camp Schedule Reminder</h3>
+          <p style="margin: 0 0 10px 0; color: #374151; font-size: 16px;"><strong>December 21–22:</strong> Saturday 9:00–10:50 AM • Sunday 9:00–10:50 AM</p>
+          <p style="margin: 0; color: #374151; font-size: 16px;"><strong>December 27–28:</strong> Saturday 9:00–10:50 AM • Sunday 9:00–10:50 AM</p>
+        </div>
+        
         <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 12px; border-left: 4px solid #3b82f6;">
           <h3 style="margin: 0 0 20px 0; color: #1e40af; font-size: 20px; text-align: center;">🏒 Camp Schedule</h3>
           <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
