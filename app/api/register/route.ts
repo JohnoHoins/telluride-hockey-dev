@@ -117,7 +117,7 @@ export async function POST(request: Request) {
         // Send confirmation email to parent only
         console.log('Sending confirmation email to:', formData.email);
         const parentEmailResult = await resend.emails.send({
-          from: 'onboarding@resend.dev',
+          from: 'Telluride Hockey <registration@telluridehockeydev.com>',
           to: formData.email,
           subject: 'Telluride Hockey Skills Camp - Registration Confirmation',
           html: parentEmailContent,
