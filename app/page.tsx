@@ -193,7 +193,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Schedule</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-blue-500 p-8 rounded-2xl text-white shadow-xl">
+            <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 20–21</h3>
               <div className="space-y-4">
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
@@ -210,20 +210,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-green-500 p-8 rounded-2xl text-white shadow-xl">
+            <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-8 rounded-2xl text-white shadow-xl">
               <h3 className="text-3xl font-bold mb-6">December 27–28</h3>
               <div className="space-y-4">
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">12U</h4>
-                  <p className="text-green-100">Sat 8:45 am • Sun 9:00 am</p>
+                  <p className="text-yellow-50">Sat 8:45 am • Sun 9:00 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">14U</h4>
-                  <p className="text-green-100">Sat 12:00 pm • Sun 10:30 am</p>
+                  <p className="text-yellow-50">Sat 12:00 pm • Sun 10:30 am</p>
                 </div>
                 <div className="bg-white bg-opacity-20 p-4 rounded-xl">
                   <h4 className="font-bold text-lg mb-2">19U / High School</h4>
-                  <p className="text-green-100">Sat 1:30 pm • Sun 12:00 pm</p>
+                  <p className="text-yellow-50">Sat 1:30 pm • Sun 12:00 pm</p>
                 </div>
               </div>
             </div>
