@@ -52,32 +52,43 @@ export async function POST(request: Request) {
           </ul>
         </div>
         
-        <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 25px; border-radius: 10px; margin-bottom: 25px;">
-          <h3 style="color: #92400e; margin-top: 0;">💰 Payment Instructions:</h3>
-          <p style="font-size: 18px; margin: 15px 0;"><strong>Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</strong></p>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
+          <h3 style="color: #1e293b; margin-top: 0; font-size: 24px; text-align: center; margin-bottom: 25px;">💰 Payment Instructions</h3>
           
-          <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
-            <div style="flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 8px; border: 2px solid #3b82f6;">
-              <h4 style="margin: 0 0 10px 0; color: #1e40af;">💳 Venmo Payment</h4>
-              <p style="margin: 10px 0;">Send payment via Venmo to:</p>
-              <div style="background: #f1f5f9; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;">
-                <strong style="font-size: 16px; color: #1e40af;">@HockeyDevelopementcamp</strong>
+          <div style="background: #1e40af; color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 25px;">
+            <p style="font-size: 28px; margin: 0; font-weight: bold;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+          </div>
+          
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 25px 0;">
+            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <h4 style="margin: 0 0 20px 0; color: #1e40af; font-size: 20px; text-align: center;">💳 Venmo Payment</h4>
+              
+              <div style="text-align: center; margin: 20px 0;">
+                <img src="/venmo-qr.png" alt="Venmo QR Code for Johno Hoins" style="width: 200px; height: 200px; border-radius: 10px; border: 2px solid #3b82f6; display: block; margin: 0 auto;">
               </div>
-              <p style="font-size: 12px; color: #6b7280; margin: 5px 0;">Include player name in the Venmo note</p>
+              
+              <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; border: 1px solid #3b82f6;">
+                <p style="margin: 0 0 10px 0; color: #64748b; font-size: 14px;">Send payment to:</p>
+                <strong style="font-size: 20px; color: #1e40af;">@johno-hoins</strong>
+              </div>
+              
+              <div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 4px solid #dc2626; margin: 15px 0;">
+                <p style="margin: 0; font-size: 14px; color: #dc2626; font-weight: 500;">📝 Please include "${formData.playerName}" in the Venmo note</p>
+              </div>
             </div>
             
-            <div style="flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 8px; border: 2px solid #10b981;">
-              <h4 style="margin: 0 0 10px 0; color: #047857;">💵 Cash Payment</h4>
-              <p style="margin: 10px 0;">Pay with cash at the camp:</p>
-              <div style="background: #ecfdf5; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;">
-                <strong style="font-size: 16px; color: #047857;">Bring exact amount</strong>
+            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <h4 style="margin: 0 0 20px 0; color: #059669; font-size: 20px; text-align: center;">💵 Cash Payment</h4>
+              <p style="margin: 10px 0; text-align: center; color: #64748b;">Pay with cash at the camp</p>
+              <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; text-align: center; margin: 20px 0; border: 1px solid #10b981;">
+                <strong style="font-size: 18px; color: #059669;">Bring exact amount</strong>
               </div>
-              <p style="font-size: 12px; color: #6b7280; margin: 5px 0;">Payment due at first session</p>
+              <p style="font-size: 14px; color: #64748b; text-align: center; margin: 10px 0;">Payment due at first session</p>
             </div>
           </div>
           
-          <div style="background: #e0f2fe; padding: 15px; border-radius: 8px; margin-top: 15px;">
-            <p style="margin: 0; font-size: 14px; color: #0c4a6e;"><strong>Note:</strong> You can choose either payment method. If paying by Venmo, please send payment before the camp starts. If paying by cash, bring the exact amount to your first session.</p>
+          <div style="background: #e0f2fe; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #0ea5e9;">
+            <p style="margin: 0; font-size: 15px; color: #0c4a6e; line-height: 1.5;"><strong>Payment Options:</strong> You can choose either payment method. If paying by Venmo, please send payment before the camp starts and include the player's name in the note. If paying by cash, bring the exact amount to your first session.</p>
           </div>
         </div>
         
