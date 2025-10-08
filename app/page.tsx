@@ -248,8 +248,6 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Registration</h2>
           <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-2xl mx-auto">
-            <p className="text-2xl font-bold mb-4 text-center">Price: $190 per player</p>
-            <p className="text-xl mb-8 text-center text-blue-100">Includes: Two 75-minute sessions</p>
             
             {isSubmitted ? (
               <div className="text-center">
