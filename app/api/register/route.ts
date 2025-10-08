@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     console.log('Registration received:', formData);
     console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
     
-    // Create parent email content with professional HTML structure
+    // Create parent email content with clean, minimal design
     const parentEmailContent = `
       <!DOCTYPE html>
       <html>
@@ -29,128 +29,49 @@ export async function POST(request: Request) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Telluride Hockey Skills Camp Registration</title>
       </head>
-      <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #374151; background-color: #f9fafb;">
+      <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1f2937; background-color: #ffffff;">
         <table role="presentation" style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-collapse: collapse;">
           <!-- Header -->
           <tr>
-            <td style="padding: 40px 30px 30px 30px; text-align: center; border-bottom: 1px solid #e5e7eb;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #1f2937; letter-spacing: -0.025em;">Telluride Hockey Development</h1>
-              <p style="margin: 8px 0 0 0; font-size: 16px; color: #6b7280; font-weight: 500;">Winter Hockey Skills Camp</p>
+            <td style="padding: 40px 30px 30px 30px; text-align: center;">
+              <h1 style="margin: 0; font-size: 28px; font-weight: 600; color: #1f2937;">Telluride Hockey Development</h1>
+              <p style="margin: 8px 0 0 0; font-size: 16px; color: #6b7280;">Winter Hockey Skills Camp</p>
             </td>
           </tr>
           
           <!-- Main Content -->
           <tr>
-            <td style="padding: 40px 30px;">
+            <td style="padding: 0 30px 40px 30px;">
               <!-- Thank You Section -->
               <div style="margin-bottom: 40px;">
-                <h2 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600; color: #1f2937;">Thank you for registering!</h2>
+                <h2 style="margin: 0 0 16px 0; font-size: 22px; font-weight: 600; color: #1f2937;">Thank you for registering!</h2>
                 <p style="margin: 0; font-size: 16px; color: #4b5563; line-height: 1.6;">We're excited to have <strong>${formData.playerName}</strong> join us for the Telluride Hockey Skills Camp.</p>
               </div>
               
-              <!-- Registration Details -->
-              <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #1f2937;">Registration Details</h3>
-                <table role="presentation" style="width: 100%; border-collapse: collapse;">
-                  <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #374151; width: 120px;">Player:</td>
-                    <td style="padding: 8px 0; color: #1f2937;">${formData.playerName}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #374151;">Age Group:</td>
-                    <td style="padding: 8px 0; color: #1f2937;">${formData.ageGroup}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #374151;">Parent/Guardian:</td>
-                    <td style="padding: 8px 0; color: #1f2937;">${formData.parentName}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #374151;">Email:</td>
-                    <td style="padding: 8px 0; color: #1f2937;">${formData.email}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #374151;">Phone:</td>
-                    <td style="padding: 8px 0; color: #1f2937;">${formData.phone || 'Not provided'}</td>
-                  </tr>
-                  ${formData.bothWeekends ? '<tr><td style="padding: 8px 0; font-weight: 500; color: #374151;">Registration:</td><td style="padding: 8px 0; color: #059669; font-weight: 500;">Both weekends (December 20-21 & 27-28)</td></tr>' : ''}
-                  ${formData.notes ? `<tr><td style="padding: 8px 0; font-weight: 500; color: #374151;">Notes:</td><td style="padding: 8px 0; color: #1f2937;">${formData.notes}</td></tr>` : ''}
-                </table>
-              </div>
-              
-              <!-- Payment Instructions -->
-              <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #1f2937; text-align: center;">Payment Instructions</h3>
+              <!-- Payment Section -->
+              <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #1f2937;">Payment Instructions</h3>
                 
                 <!-- Payment Amount -->
-                <div style="background-color: #2563eb; color: #ffffff; padding: 20px; border-radius: 6px; text-align: center; margin-bottom: 24px;">
-                  <p style="margin: 0; font-size: 24px; font-weight: 700;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+                <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 600; color: #1f2937;">Amount: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
                 </div>
                 
-                <!-- Payment Options -->
-                <table role="presentation" style="width: 100%; border-collapse: collapse;">
-                  <tr>
-                    <td style="padding: 0 12px 0 0; vertical-align: top; width: 50%;">
-                      <div style="background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; padding: 20px; height: 100%;">
-                        <h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600; color: #1f2937; text-align: center;">Venmo Payment</h4>
-                        <div style="text-align: center; margin-bottom: 16px;">
-                          <img src="/venmo-qr.png" alt="Venmo QR Code" style="width: 160px; height: 160px; border-radius: 6px; border: 1px solid #d1d5db;">
-                        </div>
-                        <div style="background-color: #f3f4f6; padding: 12px; border-radius: 4px; text-align: center; margin-bottom: 12px;">
-                          <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">Send payment to:</p>
-                          <strong style="font-size: 16px; color: #1f2937;">@johno-hoins</strong>
-                        </div>
-                        <p style="margin: 0; font-size: 13px; color: #dc2626; text-align: center; font-weight: 500;">Please include "${formData.playerName}" in the Venmo note</p>
-                      </div>
-                    </td>
-                    <td style="padding: 0 0 0 12px; vertical-align: top; width: 50%;">
-                      <div style="background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; padding: 20px; height: 100%;">
-                        <h4 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600; color: #1f2937; text-align: center;">Cash Payment</h4>
-                        <p style="margin: 0 0 16px 0; font-size: 14px; color: #6b7280; text-align: center;">Pay with cash at the camp</p>
-                        <div style="background-color: #f0fdf4; padding: 12px; border-radius: 4px; text-align: center; margin-bottom: 12px;">
-                          <strong style="font-size: 16px; color: #059669;">Bring exact amount</strong>
-                        </div>
-                        <p style="margin: 0; font-size: 13px; color: #6b7280; text-align: center;">Payment due at first session</p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-                
-                <div style="background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; margin-top: 20px; border-radius: 0 4px 4px 0;">
-                  <p style="margin: 0; font-size: 14px; color: #1e40af; line-height: 1.5;"><strong>Payment Options:</strong> You can choose either payment method. If paying by Venmo, please send payment before the camp starts and include the player's name in the note. If paying by cash, bring the exact amount to your first session.</p>
+                <!-- Venmo QR Code -->
+                <div style="margin-bottom: 20px;">
+                  <img src="https://telluridehockeydv.vercel.app/venmo-qr.png" alt="Venmo QR Code" style="width: 200px; height: 200px; border-radius: 8px; border: 1px solid #d1d5db; display: block; margin: 0 auto;">
                 </div>
-              </div>
-              
-              <!-- Camp Schedule -->
-              <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin-bottom: 40px;">
-                <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #1f2937;">Camp Schedule</h3>
-                <table role="presentation" style="width: 100%; border-collapse: collapse;">
-                  <tr>
-                    <td style="padding: 0 12px 0 0; vertical-align: top; width: 50%;">
-                      <div style="background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; padding: 16px;">
-                        <h4 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #1f2937;">December 20-21</h4>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">6U & 8U: Sat 8:45am • Sun 9:00am</p>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">10U: Sat 12:00pm • Sun 10:30am</p>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">19U: Sat 1:30pm • Sun 12:00pm</p>
-                      </div>
-                    </td>
-                    <td style="padding: 0 0 0 12px; vertical-align: top; width: 50%;">
-                      <div style="background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; padding: 16px;">
-                        <h4 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #1f2937;">December 27-28</h4>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">12U: Sat 8:45am • Sun 9:00am</p>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">14U: Sat 12:00pm • Sun 10:30am</p>
-                        <p style="margin: 4px 0; font-size: 13px; color: #4b5563;">19U: Sat 1:30pm • Sun 12:00pm</p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
+                
+                <!-- Payment Note -->
+                <p style="margin: 0; font-size: 14px; color: #6b7280; line-height: 1.5;">Please include the player's name in the Venmo payment notes.</p>
               </div>
               
               <!-- Contact Information -->
-              <div style="background-color: #f3f4f6; border-radius: 8px; padding: 24px; text-align: center;">
+              <div style="border-top: 1px solid #e5e7eb; padding-top: 30px; text-align: center;">
                 <h3 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600; color: #374151;">Contact Information</h3>
-                <p style="margin: 8px 0; font-size: 14px; color: #4b5563;"><strong>Email:</strong> johnohoins@gmail.com</p>
-                <p style="margin: 8px 0; font-size: 14px; color: #4b5563;"><strong>Phone:</strong> 970-708-0643</p>
-                <p style="margin: 16px 0 0 0; font-size: 14px; color: #6b7280; font-style: italic;">We look forward to seeing you on the ice!</p>
+                <p style="margin: 8px 0; font-size: 14px; color: #4b5563;">Email: johnohoins@gmail.com</p>
+                <p style="margin: 8px 0; font-size: 14px; color: #4b5563;">Phone: 970-708-0643</p>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #6b7280;">We look forward to seeing you on the ice!</p>
               </div>
             </td>
           </tr>
