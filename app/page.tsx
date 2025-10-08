@@ -108,6 +108,25 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="absolute inset-0 bg-black opacity-30"></div>
+        
+        {/* Hockey Sticks Background */}
+        <div className="absolute inset-0 opacity-15">
+          <div className="absolute top-20 left-10 transform rotate-12">
+            <svg width="200" height="400" viewBox="0 0 200 400" className="text-white">
+              <path d="M20 20 L20 380 L180 380 L180 20 L20 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M20 20 L20 40 L180 40 L180 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M20 360 L20 380 L180 380 L180 360" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <div className="absolute top-32 right-16 transform -rotate-12">
+            <svg width="200" height="400" viewBox="0 0 200 400" className="text-white">
+              <path d="M20 20 L20 380 L180 380 L180 20 L20 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M20 20 L20 40 L180 40 L180 20" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M20 360 L20 380 L180 380 L180 360" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round"/>
+            </svg>
+          </div>
+        </div>
+
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
             Telluride Winter Hockey
