@@ -120,25 +120,42 @@ export default function Home() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Telluride Winter Hockey
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-blue-200">
-            Skills Camp
-          </h2>
-          <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl font-semibold mb-4">December 20–21 & December 27–28</p>
-            <p className="text-xl md:text-2xl mb-4 text-blue-100">Hanley Rink, Telluride, CO</p>
-            <p className="text-2xl font-bold mb-4 text-yellow-300">$190 per player (includes two 75-minute sessions)</p>
-            <p className="text-xl mb-8 text-blue-100">Ages: 6U–19U</p>
-            <div className="flex justify-center">
-              <a
-                href="#about"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-12 py-4 rounded-xl font-bold text-xl transition-all"
-              >
-                Learn More
-              </a>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <div className="mb-12">
+            <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tight text-white drop-shadow-lg">
+              Telluride Winter Hockey
+            </h1>
+            <h2 className="text-4xl md:text-6xl font-bold text-blue-200 drop-shadow-lg">
+              Skills Camp
+            </h2>
+          </div>
+          
+          <div className="bg-white bg-opacity-15 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl">
+            <div className="space-y-6">
+              <div>
+                <p className="text-2xl md:text-3xl font-bold text-white mb-2">December 20–21 & December 27–28</p>
+                <p className="text-xl text-blue-100">Hanley Rink, Telluride, CO</p>
+              </div>
+              
+              <div className="bg-yellow-400 bg-opacity-20 rounded-2xl p-6 border border-yellow-300">
+                <p className="text-2xl md:text-3xl font-bold text-yellow-200 mb-2">$190 per player</p>
+                <p className="text-lg text-yellow-100">Ages: 6U–19U</p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a
+                  href="#register"
+                  className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-100 transition-all shadow-lg"
+                >
+                  Register Now
+                </a>
+                <a
+                  href="#about"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl font-bold text-lg transition-all"
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
         </div>
