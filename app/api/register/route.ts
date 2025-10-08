@@ -45,7 +45,7 @@ export async function POST(request: Request) {
           <p><strong>Amount:</strong> ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
           
           <div style="margin: 20px 0;">
-            <img src="https://telluridehockeydv.vercel.app/venmo-qr.jpg" alt="Venmo QR Code" style="max-width: 200px; height: auto; border-radius: 8px;" />
+            <img src="https://via.placeholder.com/200x200/0066cc/ffffff?text=VENMO+QR" alt="Venmo QR Code" style="max-width: 200px; height: auto; border-radius: 8px;" />
             <p style="font-size: 14px; color: #666; margin-top: 10px;">Scan with Venmo app to pay</p>
           </div>
           
