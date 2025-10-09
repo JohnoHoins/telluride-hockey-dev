@@ -95,34 +95,32 @@ export async function POST(request: Request) {
           ${formData.notes ? `<p><strong>Notes:</strong> ${formData.notes}</p>` : ''}
         </div>
         
-        <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center; border: 2px solid #3b82f6;">
-          <h3 style="margin-top: 0; color: #1e40af; font-size: 22px; font-weight: bold;">💳 Payment Instructions</h3>
-          <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
-            <p style="margin: 0 0 15px 0; font-size: 20px; font-weight: bold; color: #1e40af;">Amount Due: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; border: 1px solid #e2e8f0;">
+          <h3 style="margin-top: 0; color: #1e40af; font-size: 20px; font-weight: bold;">Payment Instructions</h3>
+          <div style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #e2e8f0;">
+            <p style="margin: 0 0 15px 0; font-size: 18px; font-weight: bold; color: #1e40af;">Amount Due: ${formData.bothWeekends ? '$380 (both weekends)' : '$190 (one weekend)'}</p>
             
             <a href="https://venmo.com/code?user_id=@johno-hoins&amount=${formData.bothWeekends ? '380' : '190'}&note=${encodeURIComponent(formData.playerName + ' - Telluride Hockey Camp')}" 
-               style="display: inline-block; background: #3d95ce; color: white; padding: 18px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; margin: 15px 0;">
-              💳 Pay with Venmo Now
+               style="display: inline-block; background: #3b82f6; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; margin: 10px 0;">
+              Pay with Venmo
             </a>
-            <p style="font-size: 16px; color: #666; margin-top: 15px;">Tap to open Venmo app and pay instantly</p>
+            <p style="font-size: 14px; color: #6b7280; margin-top: 10px;">Tap to open Venmo app and pay instantly</p>
           </div>
           
-          <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-top: 15px;">
-            <p style="font-size: 16px; color: #374151; margin: 0 0 10px 0; font-weight: 600;">Or send manually:</p>
-            <p style="font-size: 16px; color: #374151; margin: 5px 0;"><strong>Venmo:</strong> @johno-hoins</p>
-            <p style="font-size: 16px; color: #374151; margin: 5px 0;"><strong>Amount:</strong> $${formData.bothWeekends ? '380' : '190'}</p>
-            <p style="font-size: 16px; color: #374151; margin: 5px 0;"><strong>Note:</strong> ${formData.playerName} - Telluride Hockey Camp</p>
+          <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <p style="font-size: 15px; color: #374151; margin: 0 0 10px 0; font-weight: 600;">Or send manually:</p>
+            <p style="font-size: 15px; color: #374151; margin: 5px 0;"><strong>Venmo:</strong> @johno-hoins</p>
+            <p style="font-size: 15px; color: #374151; margin: 5px 0;"><strong>Amount:</strong> $${formData.bothWeekends ? '380' : '190'}</p>
+            <p style="font-size: 15px; color: #374151; margin: 5px 0;"><strong>Note:</strong> ${formData.playerName} - Telluride Hockey Camp</p>
           </div>
         </div>
         
-        <div style="background: #f0fdf4; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center; border: 2px solid #16a34a;">
-          <h3 style="margin: 0 0 15px 0; color: #166534; font-size: 20px; font-weight: bold;">💰 Cash Payment Option</h3>
-          <p style="margin: 0; color: #166534; font-size: 18px; font-weight: 600;">You may also bring the exact amount in cash to your first session</p>
-          <p style="margin: 10px 0 0 0; color: #15803d; font-size: 16px;">No need to pay online - cash is accepted at the rink!</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; border: 1px solid #e2e8f0;">
+          <p style="margin: 0; color: #374151; font-size: 16px; font-weight: 500;">Alternative: You may also bring the exact amount in cash to your first session</p>
         </div>
         
         <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px; text-align: center;">📅 Camp Schedule</h3>
+          <h3 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px; text-align: center;">Camp Schedule</h3>
           
           <div style="background: #3b82f6; padding: 15px; border-radius: 8px; margin-bottom: 10px; color: white;">
             <h4 style="margin: 0 0 8px 0; color: white; font-size: 16px; font-weight: bold;">December 20–21</h4>
