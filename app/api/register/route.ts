@@ -119,24 +119,20 @@ export async function POST(request: Request) {
           <p style="margin: 0; color: #374151; font-size: 16px; font-weight: 500;">Alternative: You may also bring the exact amount in cash to your first session</p>
         </div>
         
-        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="margin: 0 0 15px 0; color: #1e40af; font-size: 18px; text-align: center;">Camp Schedule</h3>
+        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin: 15px 0;">
+          <h3 style="margin: 0 0 10px 0; color: #1e40af; font-size: 16px; text-align: center;">Camp Schedule</h3>
           
-          <div style="background: #3b82f6; padding: 15px; border-radius: 8px; margin-bottom: 10px; color: white;">
-            <h4 style="margin: 0 0 8px 0; color: white; font-size: 16px; font-weight: bold;">December 20–21</h4>
-            <p style="margin: 0; color: #dbeafe; font-size: 14px; line-height: 1.4;">
-              <strong>6U & 8U:</strong> Sat 8:45am • Sun 9:00am<br>
-              <strong>10U:</strong> Sat 12:00pm • Sun 10:30am<br>
-              <strong>19U/High School:</strong> Sat 1:30pm • Sun 12:00pm
+          <div style="background: #3b82f6; padding: 12px; border-radius: 6px; margin-bottom: 8px; color: white;">
+            <p style="margin: 0; color: white; font-size: 13px; font-weight: bold;">December 20–21</p>
+            <p style="margin: 3px 0 0 0; color: #dbeafe; font-size: 12px; line-height: 1.3;">
+              6U & 8U: Sat 8:45am • Sun 9:00am | 10U: Sat 12:00pm • Sun 10:30am | 19U: Sat 1:30pm • Sun 12:00pm
             </p>
           </div>
           
-          <div style="background: #10b981; padding: 15px; border-radius: 8px; color: white;">
-            <h4 style="margin: 0 0 8px 0; color: white; font-size: 16px; font-weight: bold;">December 27–28</h4>
-            <p style="margin: 0; color: #d1fae5; font-size: 14px; line-height: 1.4;">
-              <strong>12U:</strong> Sat 8:45am • Sun 9:00am<br>
-              <strong>14U:</strong> Sat 12:00pm • Sun 10:30am<br>
-              <strong>19U/High School:</strong> Sat 1:30pm • Sun 12:00pm
+          <div style="background: #10b981; padding: 12px; border-radius: 6px; color: white;">
+            <p style="margin: 0; color: white; font-size: 13px; font-weight: bold;">December 27–28</p>
+            <p style="margin: 3px 0 0 0; color: #d1fae5; font-size: 12px; line-height: 1.3;">
+              12U: Sat 8:45am • Sun 9:00am | 14U: Sat 12:00pm • Sun 10:30am | 19U: Sat 1:30pm • Sun 12:00pm
             </p>
           </div>
         </div>
